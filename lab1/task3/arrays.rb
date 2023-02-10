@@ -21,7 +21,11 @@ def first_positive_index(array)
     end
 end
 
-array = [-1, 2, 3, -2, 5, 0]
+array = File.read(ARGV[1]).split(" ").map { |v| v.to_i }
 
-puts min array
-puts first_positive_index array
+case ARGV[0].to_i
+when 0
+    puts min(array)
+when 1
+    puts first_positive_index(array)
+end
