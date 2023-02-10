@@ -60,4 +60,20 @@ def subtask5(array)
     }
 end
 
-puts subtask5([1,2,3, 4, 5, 6, 7, 8, 9, 10])
+
+array = File.read(ARGV[1]).split(' ').map { |v| v.to_i }
+range = File.read(ARGV[2]).split(' ')
+range = range[0].to_i...range[1].to_i
+
+case ARGV[0].to_i
+when 1
+    puts subtask1(array)
+when 2
+    puts subtask2(array)
+when 3
+    puts subtask3(array, range)
+when 4
+    puts subtask4(array)
+when 5
+    puts subtask5(array)
+end
