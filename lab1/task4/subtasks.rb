@@ -28,4 +28,8 @@ def subtask2(array)
     array << subarray
 end
 
-puts subtask2([1,2,3, -1, 4, 5])
+def subtask3(array, range)
+    array[range].max
+end
+
+puts subtask3([1,2,3, -1, 4, 5], 2...5)
