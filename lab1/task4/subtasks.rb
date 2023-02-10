@@ -1,3 +1,10 @@
+def is_easy(value)
+    if value == 1 then return false end
+    (2...value)
+    .select { |divider| value % divider == 0}
+    .length == 0
+end
+
 def subtask1(array)
     was_max = false
 
@@ -43,4 +50,14 @@ def subtask4(array)
     }
 end
 
-puts subtask4([1,2,-1, -2, 4, 5])
+def subtask5(array)
+    array.reduce([]) { |divs, value| 
+        if is_easy(value) && array.select { |x| x % value == 0 }.size != 0 && !divs.include?(value) 
+            divs << value
+        else
+            divs
+        end 
+    }
+end
+
+puts subtask5([1,2,3, 4, 5, 6, 7, 8, 9, 10])
