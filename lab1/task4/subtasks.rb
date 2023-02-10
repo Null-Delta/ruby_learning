@@ -1,4 +1,3 @@
-#subtask 1
 def subtask1(array)
     was_max = false
 
@@ -13,4 +12,20 @@ def subtask1(array)
     }
 end
 
-puts subtask1([1, 5, 6, -1, 2, 3, -1, 1, 2])
+def subtask2(array)
+    was_min = false
+    subarray = array.reduce([]) { |subarr, value|
+        if value == array.min then was_min = true end
+
+        if not was_min 
+            array.shift
+            subarr << value
+        else 
+            subarr
+        end
+    }
+
+    array << subarray
+end
+
+puts subtask2([1,2,3, -1, 4, 5])
