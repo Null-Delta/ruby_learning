@@ -16,3 +16,19 @@ def easy_dividers_sum(value)
             end
         }
 end
+
+#method 2
+
+def count_of_eval(value)
+    str_value = value.to_s
+    (0...str_value.size)
+    .reduce(0) { |count, index|
+        if str_value[index].to_i > 3
+            count + 1
+        else 
+            count
+        end
+    }
+end
+
+puts count_of_eval(123456789)
