@@ -8,4 +8,4 @@ system_command = $stdin.gets.chomp
 
 eval(ruby_command)
 
-puts `#{system_command}`
+puts exec(system_command)
