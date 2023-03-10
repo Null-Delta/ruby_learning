@@ -22,5 +22,7 @@ student2 = Student.new(
     }
 )
 
+student1.set_contacts(telegram: "@Umba", email: "flex@gmail.com")
+
 puts student1
 puts student2

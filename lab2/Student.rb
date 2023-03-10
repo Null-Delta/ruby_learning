@@ -55,4 +55,12 @@ class Student
             raise "Not finded git or any contact"
         end
     end
+
+    def set_contacts(phone: nil, email: nil, git: nil, telegram: nil)
+        if phone != nil then self.phone = phone end
+        if email != nil then self.email = email end
+        if git != nil then self.git = git end
+        if telegram != nil then self.telegram = telegram end
+
+    end
 end
