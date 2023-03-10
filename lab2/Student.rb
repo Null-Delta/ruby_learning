@@ -15,6 +15,14 @@ class Student
         self.telegram = params[:telegram]
         self.email = params[:email]
         self.git = params[:git]
+
+        validate_phone()
+    end
+
+    def validate_phone
+        if phone != nil && phone !~ /\d-\d{3}-\d{3}-\d{2}-\d{2}/
+            raise "Invalid phone number"
+        end
     end
 
     def to_s

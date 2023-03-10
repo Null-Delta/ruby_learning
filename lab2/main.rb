@@ -1,4 +1,4 @@
-require_relative './Student.rb'
+require_relative './student.rb'
 
 student1 = Student.new(
     lastname: "Хахук",
@@ -14,7 +14,10 @@ student1 = Student.new(
 student2 = Student.new(
     patronymic: "Рашидович",
     lastname: "Шичиях", 
-    firstname: "Ильяс"
+    firstname: "Ильяс",
+    params: {
+        phone: "8-918-226-07-47"
+    }
 )
 
 puts student1
