@@ -4,9 +4,11 @@ student1 = Student.new(
     lastname: "Хахук",
     firstname: "Рустам", 
     patronymic: "Нальбиевич",
-    id: "2356",
-    telegram: "@delta_null", 
-    email: "delta.null@vk.ru"
+    params: {
+        id: "2356",
+        telegram: "@delta_null", 
+        email: "delta.null@vk.ru"    
+    }
 )
 
 student2 = Student.new(

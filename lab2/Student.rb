@@ -5,20 +5,16 @@ class Student
         lastname:,
         firstname:,
         patronymic:,
-        id: nil,
-        phone: nil,
-        telegram: nil,
-        email: nil,
-        git: nil
+        params: {}
     )
         self.lastname = lastname
         self.firstname = firstname
         self.patronymic = patronymic
-        self.id = id
-        self.phone = phone
-        self.telegram = telegram
-        self.email = email
-        self.git = git
+        self.id = params[:id]
+        self.phone = params[:phone]
+        self.telegram = params[:telegram]
+        self.email = params[:email]
+        self.git = params[:git]
     end
 
     def to_s
