@@ -9,14 +9,14 @@ class Student
         email = nil,
         git = nil
     )
-        @lastname = lastname
-        @firstname = firstname
-        @patronymic = patronymic
-        @id = id
-        @phone = phone
-        @telegram = telegram
-        @email = email
-        @git = git
+        set_lastname(lastname)
+        set_firstname(firstname)
+        set_patronymic(patronymic)
+        set_id(id)
+        set_phone(phone)
+        set_telegram(telegram)
+        set_email(email)
+        set_git(git)
     end
 
     def get_lastname
