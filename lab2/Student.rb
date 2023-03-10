@@ -1,5 +1,12 @@
+require_relative "./attr_limited_regex_accessor.rb"
+
 class Student
-    attr_accessor :lastname, :firstname, :patronymic, :id, :phone, :telegram, :email, :git
+    attr_accessor :lastname, :firstname, :patronymic, :id
+
+    attr_limited_regex_accessor :phone, '/\d-\d{3}-\d{3}-\d{2}-\d{2}/'
+    attr_limited_regex_accessor :email, '/\w*@\w*.\w{2,3}/'
+    attr_limited_regex_accessor :telegram, '/@\w*/'
+    attr_limited_regex_accessor :git, '/@\w*/'
 
     def initialize(
         lastname:,
@@ -11,18 +18,11 @@ class Student
         self.firstname = firstname
         self.patronymic = patronymic
         self.id = params[:id]
+
         self.phone = params[:phone]
         self.telegram = params[:telegram]
         self.email = params[:email]
         self.git = params[:git]
-
-        validate_phone()
-    end
-
-    def validate_phone
-        if phone != nil && phone !~ /\d-\d{3}-\d{3}-\d{2}-\d{2}/
-            raise "Invalid phone number"
-        end
     end
 
     def to_s

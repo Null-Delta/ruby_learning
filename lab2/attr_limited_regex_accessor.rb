@@ -1,0 +1,15 @@
+def attr_limited_regex_accessor(symbol, regex)
+    class_eval %{
+        def #{symbol}
+            @#{symbol}
+        end
+
+        def #{symbol}=(new_value)
+            if new_value != nil && new_value !~ #{regex}
+                raise "invalid #{symbol} format"
+            end
+
+            @#{symbol} = new_value
+        end
+    }
+end

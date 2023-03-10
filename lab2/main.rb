@@ -7,7 +7,7 @@ student1 = Student.new(
     params: {
         id: "2356",
         telegram: "@delta_null", 
-        email: "delta.null@vk.ru"    
+        email: "deltanull@vk.ru"    
     }
 )
 
