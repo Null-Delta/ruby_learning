@@ -50,7 +50,7 @@ class Student
         phone != nil || telegram  != nil || email != nil || git != nil
     end
 
-    def validate() 
+    def validate()
         if git == nil || !have_any_contact 
             raise "Not finded git or any contact"
         end
@@ -61,6 +61,5 @@ class Student
         if email != nil then self.email = email end
         if git != nil then self.git = git end
         if telegram != nil then self.telegram = telegram end
-
     end
 end
