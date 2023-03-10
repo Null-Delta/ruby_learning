@@ -2,14 +2,14 @@ class Student
     attr_accessor :lastname, :firstname, :patronymic, :id, :phone, :telegram, :email, :git
 
     def initialize(
-        lastname,
-        firstname,
-        patronymic,
-        id = nil,
-        phone = nil,
-        telegram = nil,
-        email = nil,
-        git = nil
+        lastname:,
+        firstname:,
+        patronymic:,
+        id: nil,
+        phone: nil,
+        telegram: nil,
+        email: nil,
+        git: nil
     )
         self.lastname = lastname
         self.firstname = firstname

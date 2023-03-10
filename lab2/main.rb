@@ -1,7 +1,19 @@
 require_relative './Student.rb'
 
-student1 = Student.new("Хахук", "Рустам", "Нальбиевич", "2356", nil, "@delta_null", "delta.null@vk.ru", nil)
-student2 = Student.new("Шичиях", "Ильяс", "Рашидович")
+student1 = Student.new(
+    lastname: "Хахук",
+    firstname: "Рустам", 
+    patronymic: "Нальбиевич",
+    id: "2356",
+    telegram: "@delta_null", 
+    email: "delta.null@vk.ru"
+)
+
+student2 = Student.new(
+    patronymic: "Рашидович",
+    lastname: "Шичиях", 
+    firstname: "Ильяс"
+)
 
 puts student1
 puts student2
