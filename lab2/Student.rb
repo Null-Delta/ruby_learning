@@ -23,6 +23,8 @@ class Student
         self.telegram = params[:telegram]
         self.email = params[:email]
         self.git = params[:git]
+
+        validate()
     end
 
     def to_s
@@ -46,5 +48,11 @@ class Student
 
     def have_any_contact
         phone != nil || telegram  != nil || email != nil || git != nil
+    end
+
+    def validate() 
+        if git == nil || !have_any_contact 
+            raise "Not finded git or any contact"
+        end
     end
 end
