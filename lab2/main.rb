@@ -26,7 +26,7 @@ student2 = Student.new(
 student3 = Student.from_string("lastname:AAA;git:@delta.null;firstname:BBB;patronymic:CCC")
 
 student4 = StudentShort.from_student(student3)
-student5 = StudentShort.from_string(228, "fio:Хахук Р Н;git:@delta.null;email:delta.null@vk.com")
+student5 = StudentShort.from_string(228, "fio:Хахук Рустам Нальбиевич;git:@delta.null;email:delta.null@vk.com")
 
 
 student1.set_contacts(telegram: "@Umba", email: "flex@gmail.com")
