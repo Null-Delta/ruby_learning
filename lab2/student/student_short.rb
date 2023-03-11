@@ -42,14 +42,14 @@ class StudentShort < AbstractStudent
     end
 
     def fio_info
-        "#{firstname} #{lastname.upcase[0]} #{patronymic.upcase[0]}"
+        "fio:#{firstname} #{lastname.upcase[0]} #{patronymic.upcase[0]}"
     end
 
     def contacts_info
-        "Email: #{email}"
+        "git:#{git};email:#{email}"
     end
 
     def get_info
-        [fio_info, "Git: #{git}", contacts_info].join("; ")
+        [fio_info, contacts_info].join(";")
     end
 end

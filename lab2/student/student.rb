@@ -33,14 +33,16 @@ class Student < AbstractStudent
         .map { |x| [x[0].to_sym, x[1]] }
         .to_h
 
-        if params[:lastname] == nil || params[:firstname] == nil || params[:patronymic] == nil
+        if params[:fio] == nil
             raise "invalid string representation"
         end
 
+        fio_components = params[:fio].split(" ")
+
         Student.new(
-            lastname: params[:lastname],
-            firstname: params[:firstname],
-            patronymic: params[:patronymic],
+            lastname: fio_components[0],
+            firstname: fio_components[1],
+            patronymic: fio_components[2],
             params: params
         )
     end
@@ -63,17 +65,20 @@ class Student < AbstractStudent
     end
 
     def contacts_info
-        phone != nil ? "Телефон: #{phone}" : 
-        email != nil ? "Почта: #{email}" : 
-        telegram != nil ? "Телеграм: #{telegram}" : 
-        ""
+        contacts = ""
+        if git != nil then contacts << "git:#{git};" end
+        if phone != nil then contacts << "phone:#{phone};" end
+        if email != nil then contacts << "email:#{email};" end
+        if telegram != nil then contacts << "telegram:#{telegram};" end
+        
+        contacts
     end
 
     def get_info
-        "#{fio_info}; Git: #{git}; #{contacts_info}"
+        "#{fio_info};#{contacts_info}"
     end
 
     def fio_info
-        "#{lastname} #{firstname.upcase[0]}.#{patronymic.upcase[0]}."
+        "fio:#{lastname} #{firstname} #{patronymic}"
     end
 end
