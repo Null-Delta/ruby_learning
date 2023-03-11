@@ -27,5 +27,5 @@ student3 = Student.from_string("lastname:AAA;git:@delta.null;firstname:BBB;patro
 student1.set_contacts(telegram: "@Umba", email: "flex@gmail.com")
 
 puts student1
-puts student2
+puts student2.get_info
 puts student3

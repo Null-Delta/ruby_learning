@@ -86,4 +86,15 @@ class Student
         if git != nil then self.git = git end
         if telegram != nil then self.telegram = telegram end
     end
+
+    def get_some_contact
+        phone == nil ? "Телефон: #{phone}" : 
+        email == nil ? "Почта: #{email}" : 
+        telegram == nil ? "Телеграм: #{telegram}" : 
+        ""
+    end
+
+    def get_info
+        "#{lastname} #{firstname.upcase[0]}.#{patronymic.upcase[0]}.; #{git}; #{get_some_contact}"
+    end
 end
