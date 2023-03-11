@@ -1,4 +1,4 @@
-require_relative "./attr_limited_regex_accessor.rb"
+require_relative "../attr_limited_regex_accessor.rb"
 
 class Student
     attr_accessor :lastname, :firstname, :patronymic, :id

@@ -1,4 +1,5 @@
-require_relative './student.rb'
+require_relative './student/student.rb'
+require_relative './student/student_short.rb'
 
 student1 = Student.new(
     lastname: "Хахук",
@@ -24,8 +25,14 @@ student2 = Student.new(
 
 student3 = Student.from_string("lastname:AAA;git:@delta.null;firstname:BBB;patronymic:CCC")
 
+student4 = StudentShort.from_student(student3)
+student5 = StudentShort.from_string(228, "fio:Хахук Р Н;git:@delta.null;email:delta.null@vk.com")
+
+
 student1.set_contacts(telegram: "@Umba", email: "flex@gmail.com")
 
 puts student1
 puts student2.get_info
 puts student3
+puts student4
+puts student5
