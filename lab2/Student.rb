@@ -39,7 +39,9 @@ class Student
         }
         .to_h
 
-        puts params
+        if params[:lastname] == nil || params[:firstname] == nil || params[:patronymic] == nil
+            raise "invalid string representation"
+        end
 
         Student.new(
             lastname: params[:lastname],
