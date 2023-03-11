@@ -1,0 +1,3 @@
+fio:Хахук Рустам Нальбиевич;git:@Null_Delta;email:updated.mail@email.com;telegram:@Umba;
+fio:Шичиях Ильяс Рашидович;git:@Abobus;phone:8-918-226-07-47;
+fio:Хахук Рустам Нальбиевич;git:@delta.null;
