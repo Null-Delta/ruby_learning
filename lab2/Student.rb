@@ -27,6 +27,28 @@ class Student
         validate()
     end
 
+    def self.from_string(str)
+        params = str
+        .split(";")
+        .map { |x|
+            x.split(":")
+        }
+        .map { |x|
+            [x[0].to_sym, x[1]]
+            
+        }
+        .to_h
+
+        puts params
+
+        Student.new(
+            lastname: params[:lastname],
+            firstname: params[:firstname],
+            patronymic: params[:patronymic],
+            params: params
+        )
+    end
+
     def to_s
         if id != nil
             id_info = "ID: #{id}"
