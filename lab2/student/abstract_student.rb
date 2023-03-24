@@ -1,4 +1,5 @@
 class AbstractStudent
+    private_class_method :new
     attr_accessor :lastname, :firstname, :patronymic, :id
 
     def get_info

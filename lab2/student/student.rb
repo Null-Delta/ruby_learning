@@ -7,6 +7,8 @@ class Student < AbstractStudent
     attr_limited_regex_accessor :telegram, '/@\w*/'
     attr_limited_regex_accessor :git, '/@\w*/'
 
+    public_class_method :new
+
     def initialize(
         lastname:,
         firstname:,

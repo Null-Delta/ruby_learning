@@ -5,6 +5,8 @@ class StudentShort < AbstractStudent
     attr_private_limited_regex_accessor :git, '/@\w*/'
     attr_private_limited_regex_accessor :email, '/\w*@\w*.\w{2,3}/'
 
+    public_class_method :new
+
     def initialize(id:, fio:, git:, email:)
         fio_components = fio.split(" ")
 
