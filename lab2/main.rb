@@ -1,6 +1,8 @@
 require_relative './student/student.rb'
 require_relative './student/student_short.rb'
 require_relative './data_table.rb'
+require_relative './data_list.rb'
+require_relative './data_list_student_short.rb'
 
 def read_from_txt(filename)
     File.read(filename)
@@ -34,3 +36,7 @@ table = DataTable.new(data: [
 puts table.element(row: 1,column: 2)
 puts table.rowsCount
 puts table.columnsCount
+
+list = DataListStudentShort.new(list: array)
+
+puts list.get_data
