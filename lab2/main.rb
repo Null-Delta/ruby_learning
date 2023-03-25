@@ -35,13 +35,10 @@ short_array = [
     StudentShort.new(id: 0, fio: "Afrl Advm Apgmti", git: "@aaa", email: "aaa@vk.com"),
 ]
 
-filterer = WithoutIdNameFilterer.new()
-constructor = DefaultDataConstructor.new()
-
 list = DataListStudentShort.new(
     list: short_array, 
-    name_filterer: NamesFilterPattern.new(name_filterer: filterer),
-    data_constructor: DataConstructPattern.new(constructor: constructor)
+    name_filterer: DefaultNameFilterPattern.new(),
+    data_constructor: DefaultDataConstructPattern.new()
 )
 
 puts list.get_data

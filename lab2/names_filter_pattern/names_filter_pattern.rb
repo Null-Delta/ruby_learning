@@ -1,12 +1,10 @@
-require_relative './name_filterer.rb'
-
 class NamesFilterPattern
-    attr_private_accessor :name_filterer
-
-    def initialize(name_filterer:) 
-        self.name_filterer = name_filterer
+    def execute(object)
+        puts 'Метод не реализован'
     end
+end
 
+class DefaultNameFilterPattern
     def execute(object)
         filter_names(select_names(object))
     end
@@ -16,6 +14,6 @@ class NamesFilterPattern
     end
 
     private def filter_names(names)
-        name_filterer.filter(names)
+        names.filter { |x| x  != "@id" }
     end
 end
