@@ -30,9 +30,8 @@ def attr_private_limited_regex_accessor(symbol, regex)
     }
 end
 
-def attr_private_accessor(symbol, regex)
+def attr_private_accessor(symbol)
     class_eval %{
-        
         private def #{symbol}
             @#{symbol}
         end
