@@ -1,7 +1,6 @@
 class DataList 
-    attr_private_accessor :list
+    attr_accessor :list
     attr_private_accessor :selected_objects
-
     def initialize(list:)
         self.list = list
     end
