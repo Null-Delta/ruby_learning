@@ -3,6 +3,9 @@ require_relative './student/student_short.rb'
 require_relative './data_table.rb'
 require_relative './data_list.rb'
 require_relative './data_list_student_short.rb'
+require_relative './names_filter_pattern/names_filter_pattern.rb'
+require_relative './data_construct_pattern/data_construct_pattarn.rb'
+
 
 def read_from_txt(filename)
     File.read(filename)
@@ -27,16 +30,18 @@ array[0].set_contacts(email: "updated.mail@email.com")
 write_to_txt("new_dataset.txt", array)
 array = read_from_txt("new_dataset.txt")
 
-table = DataTable.new(data: [
-    ["a", "b", "c"],
-    [1, 2, 3],
-    [true, false, nil]
-])
+short_array = [
+    StudentShort.new(id: 0, fio: "Aa Bb Cc", git: "@abc", email: "abc@vk.com"),
+    StudentShort.new(id: 0, fio: "Afrl Advm Apgmti", git: "@aaa", email: "aaa@vk.com"),
+]
 
-puts table.element(row: 1,column: 2)
-puts table.rowsCount
-puts table.columnsCount
+filterer = WithoutIdNameFilterer.new()
+constructor = DefaultDataConstructor.new()
 
-list = DataListStudentShort.new(list: array)
+list = DataListStudentShort.new(
+    list: short_array, 
+    name_filterer: NamesFilterPattern.new(name_filterer: filterer),
+    data_constructor: DataConstructPattern.new(constructor: constructor)
+)
 
 puts list.get_data

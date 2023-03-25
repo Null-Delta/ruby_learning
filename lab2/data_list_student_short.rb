@@ -1,21 +1,23 @@
 require_relative './data_list.rb'
 require_relative './data_table.rb'
+require_relative './names_filter_pattern/names_filter_pattern.rb'
 
 class DataListStudentShort < DataList 
+    attr_private_accessor :name_filterer
+    attr_private_accessor :data_constructor
+
+    def initialize(list:, name_filterer:, data_constructor:) 
+        super(list: list)
+        
+        self.name_filterer = name_filterer
+        self.data_constructor = data_constructor
+    end
+
     def get_names
-        return list[0].instance_variables.map { |x| x.to_s }.map { |x| x[1..-1] }.filter { |x| x  != "@id" }
+        name_filterer.execute(list[0])
     end
 
     def get_data 
-        @names = get_names
-
-        puts @names
-        return DataTable.new(data: (0...list.size).map { |item_index|
-            (0...@names.size + 1).map { |name_index|
-                if name_index == 0 then item_index else
-                    list[item_index].instance_variable_get("@#{@names[name_index - 1]}")
-                end
-            }
-        })
+        data_constructor.execute(list, get_names)
     end
 end

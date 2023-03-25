@@ -11,7 +11,7 @@ class DataList
     end
 
     def get_selected_objects
-        (0..<list.size)
+        (0...list.size)
             .filter { |x| selected_objects.include? x }
     end
 
