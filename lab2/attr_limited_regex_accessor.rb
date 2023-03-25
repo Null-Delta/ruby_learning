@@ -29,3 +29,16 @@ def attr_private_limited_regex_accessor(symbol, regex)
         end
     }
 end
+
+def attr_private_accessor(symbol, regex)
+    class_eval %{
+        
+        private def #{symbol}
+            @#{symbol}
+        end
+
+        private def #{symbol}=(new_value)
+            @#{symbol} = new_value
+        end
+    }
+end
