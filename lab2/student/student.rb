@@ -77,7 +77,11 @@ class Student < AbstractStudent
     end
 
     def get_info
-        "#{fio_info};#{contacts_info}"
+        if id != nil
+            "id:#{id};#{fio_info};#{contacts_info}"
+        else 
+            "#{fio_info};#{contacts_info}"
+        end
     end
 
     def fio_info
