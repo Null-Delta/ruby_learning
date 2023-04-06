@@ -1,21 +1,17 @@
-class StudentsListTxt
+require 'json'
+
+class StudentsListJson
     attr_accessor :students
 
     def read_from(filename)
-        self.students = File.read(filename)
-        .split("\n")
-        .map { |v| Student.from_string(v) }
+        file = File.read(filename)
+        self.students = JSON.parse(file)
     end
 
     def write_to(filename)
-        File.open(filename, 'w') { |file| 
-            file.write(
-                self.students.map { |student| 
-                    student.get_info
-                }
-                .join("\n")
-            )
-        }
+        File.open(filename, 'w') do |f|
+            f.write(@students.to_json)
+        end
     end
 
     def get_student(id)
