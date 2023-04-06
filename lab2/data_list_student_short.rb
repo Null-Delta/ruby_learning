@@ -21,4 +21,8 @@ class DataListStudentShort < DataList
     def get_data 
         data_constructor.execute(list, get_names)
     end
+
+    def list=(new_list)
+        self.list = new_list
+    end
 end

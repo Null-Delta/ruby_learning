@@ -87,4 +87,17 @@ class Student < AbstractStudent
     def fio_info
         "fio:#{lastname} #{firstname} #{patronymic}"
     end
+
+    def as_json 
+        {
+            lastname: lastname,
+            firstname: firstname,
+            patronymic: patronymic,
+            id: id,
+            phone: phone,
+            email: email,
+            git: git,
+            telegram: telegram
+        }
+    end
 end

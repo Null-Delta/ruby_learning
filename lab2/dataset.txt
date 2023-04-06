@@ -1,3 +1,11 @@
 id:0;fio:Хахук Рустам Нальбиевич;git:@Null_Delta;email:flex@gmail.com;telegram:@Umba;
 id:1;fio:Шичиях Ильяс Рашидович;git:@Abobus;phone:8-918-226-07-47;
 id:2;fio:Хахук Рустам Нальбиевич;git:@delta.null;
+id:3;fio:Хахук Рустам Нальбиевич;git:@delta.null;
+id:4;fio:Хахук Рустам Нальбиевич;git:@delta.null;
+id:5;fio:Хахук Рустам Нальбиевич;git:@delta.null;
+id:6;fio:Хахук Рустам Нальбиевич;git:@delta.null;
+id:7;fio:Хахук Рустам Нальбиевич;git:@delta.null;
+id:8;fio:Хахук Рустам Нальбиевич;git:@delta.null;
+id:9;fio:Хахук Рустам Нальбиевич;git:@delta.null;
+id:10;fio:Хахук Рустам Нальбиевич;git:@delta.null;

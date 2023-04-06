@@ -1,10 +1,23 @@
 class StudentListFormat
-    attr_accessor :students
+    attr_private_accessor :students
+    attr_private_accessor :formater
+
+    def initialize(formater)
+        self.formater = formater
+    end
 
     def get_student(id)
         self.students.detect { |x|
             x.id == id .to_s
         }
+    end
+
+    def read_from(filename)
+        self.students = formater.read_from(filename)
+    end
+
+    def write_to(filename)
+        formater.write_to(filename, self.students)
     end
 
     def delete_student(id)
@@ -16,11 +29,16 @@ class StudentListFormat
         self.students.map! { |x| x.id == id.to_s ? student : x }
     end
 
-    def get_students_slice(k, count)
-        from = min(k * count, self.students.count)
-        to = min(self.students.count, from + count)
+    def get_students_slice(k, count, data)
+        from = [k * count, self.students.count].min
+        to = [self.students.count, from + count].min
 
-        return self.students[from...to]
+        if data == nil
+            return DataList.new(list: self.students[from...to])
+        else
+            data.list = self.students[from...to]
+            data
+        end
     end
 
     def sort()

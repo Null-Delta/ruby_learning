@@ -17,4 +17,8 @@ class AbstractStudent
     def to_s
         get_info
     end
+
+    def as_json 
+
+    end
 end
