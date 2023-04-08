@@ -33,12 +33,13 @@ end
 class JsonStudentsListFormatStrategy < StudentsListFormatStrategy
     def read_from(filename)
         file = File.read(filename)
-        JSON.parse(file)
+        json = JSON.parse(file)
+        json.map { |x| Student.from_json(x) }
     end
 
     def write_to(filename, students)
         File.open(filename, 'w') do |f|
-            f.write(students)
+            f.write(JSON.generate(students.map { |x| x.as_json }))
         end
     end
 end

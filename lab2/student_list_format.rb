@@ -1,6 +1,6 @@
 class StudentListFormat
     attr_private_accessor :students
-    attr_private_accessor :formater
+    attr_accessor :formater
 
     def initialize(formater)
         self.formater = formater

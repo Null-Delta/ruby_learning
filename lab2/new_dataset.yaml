@@ -1,0 +1,100 @@
+---
+- !ruby/object:Student
+  lastname: Хахук
+  firstname: Рустам
+  patronymic: Нальбиевич
+  id: '0'
+  phone:
+  telegram: "@Umba"
+  email: flex@gmail.com
+  git: "@Null_Delta"
+- !ruby/object:Student
+  lastname: Шичиях
+  firstname: Ильяс
+  patronymic: Рашидович
+  id: '1'
+  phone: 8-918-226-07-47
+  telegram:
+  email:
+  git: "@Abobus"
+- !ruby/object:Student
+  lastname: Хахук
+  firstname: Рустам
+  patronymic: Нальбиевич
+  id: '2'
+  phone:
+  telegram:
+  email:
+  git: "@delta.null"
+- !ruby/object:Student
+  lastname: Хахук
+  firstname: Рустам
+  patronymic: Нальбиевич
+  id: '3'
+  phone:
+  telegram:
+  email:
+  git: "@delta.null"
+- !ruby/object:Student
+  lastname: Хахук
+  firstname: Рустам
+  patronymic: Нальбиевич
+  id: '4'
+  phone:
+  telegram:
+  email:
+  git: "@delta.null"
+- !ruby/object:Student
+  lastname: Хахук
+  firstname: Рустам
+  patronymic: Нальбиевич
+  id: '5'
+  phone:
+  telegram:
+  email:
+  git: "@delta.null"
+- !ruby/object:Student
+  lastname: Хахук
+  firstname: Рустам
+  patronymic: Нальбиевич
+  id: '6'
+  phone:
+  telegram:
+  email:
+  git: "@delta.null"
+- !ruby/object:Student
+  lastname: Хахук
+  firstname: Рустам
+  patronymic: Нальбиевич
+  id: '7'
+  phone:
+  telegram:
+  email:
+  git: "@delta.null"
+- !ruby/object:Student
+  lastname: Хахук
+  firstname: Рустам
+  patronymic: Нальбиевич
+  id: '8'
+  phone:
+  telegram:
+  email:
+  git: "@delta.null"
+- !ruby/object:Student
+  lastname: Хахук
+  firstname: Рустам
+  patronymic: Нальбиевич
+  id: '9'
+  phone:
+  telegram:
+  email:
+  git: "@delta.null"
+- !ruby/object:Student
+  lastname: Хахук
+  firstname: Рустам
+  patronymic: Нальбиевич
+  id: '10'
+  phone:
+  telegram:
+  email:
+  git: "@delta.null"

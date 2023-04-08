@@ -16,4 +16,7 @@ puts data.list
 
 puts ""
 data = std_list_txt.get_students_slice(1, 7, data)
+
+std_list_txt.formater = JsonStudentsListFormatStrategy.new()
+std_list_txt.write_to("new_dataset.json")
 puts data.list

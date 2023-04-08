@@ -1,7 +1,7 @@
 require_relative "../attr_limited_regex_accessor.rb"
 require_relative "./abstract_student.rb"
 
-class Student < AbstractStudent
+class Student < AbstractStudent    
     attr_limited_regex_accessor :phone, '/\d-\d{3}-\d{3}-\d{2}-\d{2}/'
     attr_limited_regex_accessor :email, '/\w*@\w*.\w{2,3}/'
     attr_limited_regex_accessor :telegram, '/@\w*/'
@@ -26,6 +26,19 @@ class Student < AbstractStudent
         self.git = params[:git]
 
         validate()
+    end
+
+    def self.from_json(json)
+        params = json.map { |v| 
+            [v[0].to_sym, v[1]]
+        }.to_h
+
+        Student.new(
+            lastname: json["lastname"],
+            firstname: json["firstname"],
+            patronymic: json["patronymic"],
+            params: params
+        )
     end
 
     def self.from_string(str)
