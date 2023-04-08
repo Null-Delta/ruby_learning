@@ -7,13 +7,9 @@ require_relative './names_filter_pattern/names_filter_pattern.rb'
 require_relative './data_construct_pattern/data_construct_pattarn.rb'
 require_relative './student_list_format.rb'
 require_relative './students_list_format_strategy.rb'
-require './database/students_db.rb'
+require './database/students_list_db.rb'
 
 
-db = StudentsDB.new()
+db = StudentsListDB.new()
 
-client = Mysql2::Client.new(:host => "localhost", :username => "root")
-results = client.query("USE my_db")
-results = client.query("SELECT * FROM student WHERE id = 2")
-
-puts results.map { |x| x.to_s }
+puts db.get_student(2)

@@ -6,18 +6,18 @@ class StudentListFormat
         self.formater = formater
     end
 
-    def get_student(id)
-        self.students.detect { |x|
-            x.id == id .to_s
-        }
-    end
-
     def read_from(filename)
         self.students = formater.read_from(filename)
     end
 
     def write_to(filename)
         formater.write_to(filename, self.students)
+    end
+
+    def get_student(id)
+        self.students.detect { |x|
+            x.id == id .to_s
+        }
     end
 
     def delete_student(id)
@@ -41,11 +41,11 @@ class StudentListFormat
         end
     end
 
-    def sort()
-        self.students.sort_by(&:fio_info)
-    end
-
     def count()
         self.students.count
+    end
+
+    def sort()
+        self.students.sort_by(&:fio_info)
     end
 end
