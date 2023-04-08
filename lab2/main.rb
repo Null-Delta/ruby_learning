@@ -8,6 +8,9 @@ require_relative './data_construct_pattern/data_construct_pattarn.rb'
 require_relative './student_list_format.rb'
 require_relative './students_list_format_strategy.rb'
 require './database/students_list_db.rb'
+require './students_list.rb'
+require './students_list_adapter.rb'
 
+studentsList = StudentsList.new(StudentsListDBAdapter.new(StudentsListDB))
 
-puts StudentsListDB.get_student(2)
+puts studentsList.get_student(2)

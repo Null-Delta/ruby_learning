@@ -2,7 +2,7 @@ class StudentsList
     attr_private_accessor :students_list_adapter
 
     def initialize(adapter)
-        seld.student_list_format = adapter
+        self.students_list_adapter = adapter
     end
 
     def get_student(id)
