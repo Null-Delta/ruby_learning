@@ -7,15 +7,13 @@ require_relative './names_filter_pattern/names_filter_pattern.rb'
 require_relative './data_construct_pattern/data_construct_pattarn.rb'
 require_relative './student_list_format.rb'
 require_relative './students_list_format_strategy.rb'
-require 'mysql2'
+require './database/students_db.rb'
+
+
+db = StudentsDB.new()
 
 client = Mysql2::Client.new(:host => "localhost", :username => "root")
+results = client.query("USE my_db")
+results = client.query("SELECT * FROM student")
 
-client.query("DROP DATABASE test_db")
-client.query("CREATE DATABASE test_db")
-client.query("USE test_db")
-client.query("CREATE TABLE users(username CHAR(20));")
-client.query('INSERT INTO users (username) VALUES ROW("aboba")')
-
-results = client.query("SELECT * FROM users")
 puts results.map { |x| x.to_s }
