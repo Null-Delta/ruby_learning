@@ -10,6 +10,4 @@ require_relative './students_list_format_strategy.rb'
 require './database/students_list_db.rb'
 
 
-db = StudentsListDB.new()
-
-puts db.get_student(2)
+puts StudentsListDB.get_student(2)
