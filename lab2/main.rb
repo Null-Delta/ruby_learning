@@ -7,16 +7,15 @@ require_relative './names_filter_pattern/names_filter_pattern.rb'
 require_relative './data_construct_pattern/data_construct_pattarn.rb'
 require_relative './student_list_format.rb'
 require_relative './students_list_format_strategy.rb'
+require 'mysql2'
 
-std_list_txt = StudentListFormat.new(TxtStudentsListFormatStrategy.new())
-std_list_txt.read_from("dataset.txt")
+client = Mysql2::Client.new(:host => "localhost", :username => "root")
 
-data = std_list_txt.get_students_slice(0, 7, data)
-puts data.list
+client.query("DROP DATABASE test_db")
+client.query("CREATE DATABASE test_db")
+client.query("USE test_db")
+client.query("CREATE TABLE users(username CHAR(20));")
+client.query('INSERT INTO users (username) VALUES ROW("aboba")')
 
-puts ""
-data = std_list_txt.get_students_slice(1, 7, data)
-
-std_list_txt.formater = JsonStudentsListFormatStrategy.new()
-std_list_txt.write_to("new_dataset.json")
-puts data.list
+results = client.query("SELECT * FROM users")
+puts results.map { |x| x.to_s }
