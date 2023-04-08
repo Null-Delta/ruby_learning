@@ -20,6 +20,10 @@ class StudentListFormat
         }
     end
 
+    def add_student(student)
+        self.students << student
+    end
+
     def delete_student(id)
         index = students.index(students.detect { |x| x.id == id.to_s })
         self.students.delete_at(index)
