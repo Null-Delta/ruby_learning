@@ -7,11 +7,16 @@ end
 class DefaultDataConstructPattern 
     def execute(values, attrs)
         (0...values.size).map { |item_index|
-            (0...attrs.size + 1).map { |name_index|
-                if name_index == 0 then item_index else
-                    values[item_index].instance_variable_get("@#{attrs[name_index - 1]}")
-                end
-            }
+            [
+                values[item_index].id,
+                values[item_index].lastname,
+                values[item_index].firstname,
+                values[item_index].patronymic,
+                values[item_index].git,
+                values[item_index].telegram,
+                values[item_index].phone,
+                values[item_index].email
+            ]
         }
     end
 end

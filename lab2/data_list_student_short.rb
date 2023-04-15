@@ -15,7 +15,7 @@ class DataListStudentShort < DataList
     end
 
     def get_names
-        name_filterer.execute(list[0])
+        ["ID", "Фамилия", "Имя", "Отчество", "Гит", "Телега", "Телефон", "Почта"]
     end
 
     def get_data 
@@ -23,6 +23,6 @@ class DataListStudentShort < DataList
     end
 
     def list=(new_list)
-        self.list = new_list
+        @list = new_list
     end
 end

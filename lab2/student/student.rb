@@ -67,7 +67,7 @@ class Student < AbstractStudent
     end
 
     def validate
-        if git == nil || !have_any_contact 
+        if !have_any_contact 
             raise "Not finded git or any contact"
         end
     end

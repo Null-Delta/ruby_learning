@@ -73,7 +73,7 @@ class StudentsListFormatterAdapter < StudentsListAdapter
     def get_students(from, to)
         count = to - from
         k = from / count
-        formatter.get_students_slice(k, count)
+        formatter.get_students_slice(k, count, nil)
     end
 
     def add_student(student)
