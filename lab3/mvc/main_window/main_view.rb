@@ -1,6 +1,5 @@
 require_relative './../students_list/views/students_list_view.rb'
 require 'glimmer-dsl-libui'
-require 'tcl-tk'
 
 class MainView
     include Glimmer
