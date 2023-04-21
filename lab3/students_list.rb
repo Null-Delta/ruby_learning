@@ -17,8 +17,8 @@ class StudentsList
         students_list_adapter.replace_student(id, student)
     end
 
-    def get_students(from, to)
-        students_list_adapter.get_students(from, to)
+    def get_students(from, to, data)
+        students_list_adapter.get_students(from, to, data)
     end
 
     def add_student(student)

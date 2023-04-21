@@ -38,11 +38,12 @@ class StudentListFormat
         to = [self.students.count, from + count].min
 
         if data == nil
-            return DataList.new(list: self.students[from...to])
+            data = DataList.new(list: self.students[from...to])
         else
             data.list = self.students[from...to]
-            data
         end
+
+        data.list
     end
 
     def count()

@@ -2,6 +2,7 @@ class DataList
     attr_accessor :list
     attr_private_accessor :selected_objects
     def initialize(list:)
+        self.data_list_observers = []
         self.list = list
     end
 

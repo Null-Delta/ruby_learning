@@ -3,7 +3,6 @@ class DataTable
 
     def initialize(data:)
         self.data = data
-        puts data
     end
 
     def element(row:, column:)

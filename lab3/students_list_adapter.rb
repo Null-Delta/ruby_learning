@@ -5,10 +5,10 @@ class StudentsListAdapter
     def remove_student(id)
     end
 
-    def replace_student(id, student)
+    def replace_student(id, student, data)
     end
 
-    def get_students(from, to)
+    def get_students(from, to, data)
     end
 
     def add_student(student)
@@ -37,8 +37,8 @@ class StudentsListDBAdapter < StudentsListAdapter
         database_list.replace_student(id, student)
     end
 
-    def get_students(from, to)
-        database_list.get_students(from, to)
+    def get_students(from, to, data)
+        database_list.get_students(from, to, data)
     end
 
     def add_student(student)
@@ -70,10 +70,10 @@ class StudentsListFormatterAdapter < StudentsListAdapter
         formatter.replace_student(id, student)
     end
 
-    def get_students(from, to)
+    def get_students(from, to, data)
         count = to - from
         k = from / count
-        formatter.get_students_slice(k, count, nil)
+        formatter.get_students_slice(k, count, data)
     end
 
     def add_student(student)
