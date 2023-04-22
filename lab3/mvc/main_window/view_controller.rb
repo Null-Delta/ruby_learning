@@ -1,6 +1,7 @@
 require_relative './../../data_construct_pattern/data_construct_pattarn.rb'
 require_relative './main_view.rb'
 require_relative './../create_student_window/create_student_controller.rb'
+require_relative './../create_student_window/edit_student_controller.rb'
 
 class ViewController
     attr_private_accessor :model
@@ -71,6 +72,17 @@ class ViewController
         controller.onCreate = lambda { |student|
             puts student
             model.add_student(student)
+            update_table()
+        }
+
+        controller.ui.present
+    end
+
+    def open_student_editing_window(id)
+        student = model.get_student(id)
+        controller = EditStudentController.new(student)
+        controller.onCreate = lambda { |student|
+            model.replace_student(controller.edit_user_id, student)
             update_table()
         }
 

@@ -30,13 +30,13 @@ class StudentsDB
             INSERT INTO student (id, lastname, firstname, patronymic, git, phone, email, telegram) VALUES
             ROW(
                 \"#{id}\",
-                \"#{attr_or_null(student_json["lastname"])}\",
-                \"#{attr_or_null(student_json["firstname"])}\",
-                \"#{attr_or_null(student_json["patronymic"])}\", 
-                \"#{attr_or_null(student_json["git"])}\", 
-                \"#{attr_or_null(student_json["phone"])}\",
-                \"#{attr_or_null(student_json["email"])}\",
-                \"#{attr_or_null(student_json["telegram"])}\"
+                \"#{attr_or_null(student_json[:lastname])}\",
+                \"#{attr_or_null(student_json[:firstname])}\",
+                \"#{attr_or_null(student_json[:patronymic])}\", 
+                \"#{attr_or_null(student_json[:git])}\", 
+                \"#{attr_or_null(student_json[:phone])}\",
+                \"#{attr_or_null(student_json[:email])}\",
+                \"#{attr_or_null(student_json[:telegram])}\"
             )
             """)
     end

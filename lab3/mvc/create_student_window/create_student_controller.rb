@@ -5,6 +5,6 @@ class CreateStudentController
     attr_accessor :onCreate
 
     def initialize()
-        @ui = CreateStudentView.new(self)
+        @ui = CreateStudentView.new(self, nil)
     end
 end

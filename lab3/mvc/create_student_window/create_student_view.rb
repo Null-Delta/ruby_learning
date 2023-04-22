@@ -35,9 +35,29 @@ class CreateStudentView
 
     attr_accessor :delegate
 
-    def initialize(delegate)
+    def set_editing_mode()
+        git_field.read_only = true
+        phone_field.read_only = true
+        email_field.read_only = true
+        telegram_field.read_only = true
+
+        done_button.text = "Обновить"
+        done_button.enabled = true
+    end
+
+    def initialize(delegate, student = nil)
         self.delegate = delegate
         self.build_ui
+
+        if student != nil
+            self.firstname_value = student.firstname
+            self.lastname_value = student.lastname
+            self.patronymic_value = student.patronymic
+            self.git_value = student.git
+            self.phone_value = student.phone
+            self.telegram_value = student.telegram
+            self.email_value = student.email
+        end
     end
     
     def present

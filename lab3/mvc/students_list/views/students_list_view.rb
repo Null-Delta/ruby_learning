@@ -227,6 +227,9 @@ class StudentsListView
                 self.edit_button = button("изменить") {
                     stretchy false
                     enabled false
+                    on_clicked {
+                        delegate.open_student_editing_window(self.data_table.cell_rows[selected_cell][0])
+                    }
                 }
                 
                 self.delete_button = button("удалить") {
