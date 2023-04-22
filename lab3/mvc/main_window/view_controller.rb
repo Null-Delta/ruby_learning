@@ -1,5 +1,6 @@
 require_relative './../../data_construct_pattern/data_construct_pattarn.rb'
 require_relative './main_view.rb'
+require_relative './../create_student_window/create_student_controller.rb'
 
 class ViewController
     attr_private_accessor :model
@@ -59,10 +60,20 @@ class ViewController
 
     def update_table
         model.get_students(self.selected_page * 10, (self.selected_page + 1) * 10, self.data_list)
-
         self.view.filter_tab.next_page_button.enabled = self.selected_page != self.pages_count - 1
         self.view.filter_tab.last_page_button.enabled = self.selected_page != 0
 
         self.view.filter_tab.table_title.text = (self.selected_page + 1).to_s + " из " + self.pages_count.to_s
+    end
+
+    def open_student_creation_window()
+        controller = CreateStudentController.new()
+        controller.onCreate = lambda { |student|
+            puts student
+            model.add_student(student)
+            update_table()
+        }
+
+        controller.ui.present
     end
 end

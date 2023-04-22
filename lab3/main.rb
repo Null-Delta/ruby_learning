@@ -15,11 +15,8 @@ require_relative './mvc/main_window/view_controller.rb'
 # Time Machine: 
 # https://www.figma.com/file/jZG7NtYeqDL5MwffOHc5Ca/TimeMachine?node-id=0%3A1&t=VKuY8n60jMmKAvCv-1
 students_model = StudentsList.new(
-    StudentsListFormatterAdapter.new(
-        StudentListFormat.new(
-            TxtStudentsListFormatStrategy.new()
-        ),
-        'dataset.txt'
+    StudentsListDBAdapter.new(
+        StudentsListDB
     )
 )
 controller = ViewController.new(students_model)

@@ -33,17 +33,9 @@ class StudentListFormat
         self.students.map! { |x| x.id == id.to_s ? student : x }
     end
 
-    def get_students_slice(k, count, data)
+    def get_students_slice(k, count)
         from = [k * count, self.students.count].min
         to = [self.students.count, from + count].min
-
-        if data == nil
-            data = DataList.new(list: self.students[from...to])
-        else
-            data.list = self.students[from...to]
-        end
-
-        data.list
     end
 
     def count()

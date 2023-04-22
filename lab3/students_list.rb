@@ -18,7 +18,15 @@ class StudentsList
     end
 
     def get_students(from, to, data)
-        students_list_adapter.get_students(from, to, data)
+        values = students_list_adapter.get_students(from, to)
+
+        if data == nil
+            data = DataList.new(list: values)
+        else
+            data.list = values
+        end
+
+        data.list
     end
 
     def add_student(student)

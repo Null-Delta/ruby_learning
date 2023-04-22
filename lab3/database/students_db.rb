@@ -42,16 +42,17 @@ class StudentsDB
     end
 
     def add_student(student_json)
+        puts student_json[:lastname]
         db_connection.query("""
         INSERT INTO student (lastname, firstname, patronymic, git, phone, email, telegram) VALUES
         ROW(
-            \"#{attr_or_null(student_json["lastname"])}\",
-            \"#{attr_or_null(student_json["firstname"])}\",
-            \"#{attr_or_null(student_json["patronymic"])}\", 
-            \"#{attr_or_null(student_json["git"])}\", 
-            \"#{attr_or_null(student_json["phone"])}\",
-            \"#{attr_or_null(student_json["email"])}\",
-            \"#{attr_or_null(student_json["telegram"])}\"
+            \"#{attr_or_null(student_json[:lastname])}\",
+            \"#{attr_or_null(student_json[:firstname])}\",
+            \"#{attr_or_null(student_json[:patronymic])}\", 
+            \"#{attr_or_null(student_json[:git])}\", 
+            \"#{attr_or_null(student_json[:phone])}\",
+            \"#{attr_or_null(student_json[:email])}\",
+            \"#{attr_or_null(student_json[:telegram])}\"
         )
         """)
     end
@@ -61,7 +62,7 @@ class StudentsDB
     end
 
     def count()
-        db_connection.query("SELECT count(*) FROM student")
+        db_connection.query("SELECT count(*) FROM student").count
     end
 
     private def attr_or_null(attr) 

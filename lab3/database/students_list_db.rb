@@ -19,10 +19,7 @@ class StudentsListDB
         StudentsListDB.database.add_student(student.as_json)
     end
 
-    def self.get_students_slice(k, count, data)
-        from = [k * count, self.count()].min
-        to = [self.count(), from + count].min
-
+    def self.get_students_slice(from, to)
         StudentsListDB.database.select_students(from, to).map { |x| Student.from_json(x) }
     end
 

@@ -215,6 +215,9 @@ class StudentsListView
 
                 button("Добавить") {
                     stretchy false
+                    on_clicked {
+                        delegate.open_student_creation_window()
+                    }
                 }
 
                 button("обновить") {

@@ -31,6 +31,8 @@ class Student < AbstractStudent
     def self.from_json(json)
         params = json.map { |v| 
             [v[0].to_sym, v[1]]
+        }.filter { |v|
+            v[1] != "NULL"
         }.to_h
 
         Student.new(
