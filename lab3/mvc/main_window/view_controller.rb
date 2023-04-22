@@ -76,4 +76,9 @@ class ViewController
 
         controller.ui.present
     end
+
+    def remove_student(id)
+        model.remove_student(id)
+        update_table()
+    end
 end

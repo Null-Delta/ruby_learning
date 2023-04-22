@@ -232,6 +232,9 @@ class StudentsListView
                 self.delete_button = button("удалить") {
                     stretchy false
                     enabled false
+                    on_clicked {
+                        delegate.remove_student(self.data_table.cell_rows[selected_cell][0])
+                    }
                 }
             }
         }
