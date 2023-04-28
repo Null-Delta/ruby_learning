@@ -40,7 +40,7 @@ class StudentsListView
             'не важно',
             'есть',
             'нет'
-        ]
+        ]        
     end
 
     def build_ui

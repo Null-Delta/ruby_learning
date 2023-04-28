@@ -1,2 +1,0 @@
-id:1;fio:Шичиях Ильяс Рашидович;git:@Abobus;phone:8-918-226-07-47;email:updated.mail@email.com;
-id:2;fio:Хахук Рустам Нальбиевич;git:@delta.null;
