@@ -1,3 +1,17 @@
+module DataListObserver
+    def notify(data)
+        raise 'not implemented'
+    end
+end
+
+module DataListNotifier
+    attr_accessor :data_list_observers
+
+    def notify
+        raise 'not implemented'
+    end
+end
+
 class DataList 
     attr_accessor :list
     attr_private_accessor :selected_objects
@@ -21,5 +35,23 @@ class DataList
 
     def get_data
         raise "Метод не реализован"
+    end
+end
+
+class DataList
+    include DataListNotifier
+
+    def notify
+        data_list_observers.each { |observer|
+            observer.notify(self.get_data)
+        }
+    end
+
+    def add_observer(observer)
+        self.data_list_observers << observer
+    end
+
+    def remove_observer(observer)
+        self.data_list_observers.delete(observer) 
     end
 end

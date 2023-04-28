@@ -1,3 +1,4 @@
+require_relative "./attr_limited_regex_accessor.rb"
 class StudentsList 
     attr_private_accessor :students_list_adapter
 

@@ -62,7 +62,7 @@ class StudentsDB
     end
 
     def count()
-        db_connection.query("SELECT count(*) FROM student").count
+        db_connection.query("SELECT * FROM student").count
     end
 
     private def attr_or_null(attr) 
