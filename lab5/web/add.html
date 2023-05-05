@@ -1,0 +1,98 @@
+<html>
+    <body style="display: flex; flex-direction: column; width: 256px;">
+        Фамилия
+        <input type="text" id="firstname">
+
+        Имя
+        <input type="text" id="lastname">
+        
+        Отчество
+        <input type="text" id="patronymic">
+
+        Гит
+        <input type="text" id="git">
+
+        Телефон
+        <input type="text" id="phone">
+
+        Почта
+        <input type="text" id="email">
+
+        Телеграм
+        <input type="text" id="telegram">
+        <button style="margin-top: 16px;" onclick="add_student()">Готово</button>
+    </body>
+
+    <script>
+        let is_edit_mode = false
+        let id = null
+
+        function check_button() {
+
+        }
+
+        function get_editing_student() {
+            var http = new XMLHttpRequest();
+            http.open('GET', 'get_editing_id', false);
+            http.send()
+
+            id = http.responseText
+
+
+            if (id != "null") {
+                is_edit_mode = true
+                
+                http.open('POST', 'editing' + id, false);
+                http.send()
+
+                let student = JSON.parse(http.responseText)
+
+                document.getElementById('firstname').value = student[0]["firstname"]
+                document.getElementById('lastname').value = student[0]["lastname"]
+                document.getElementById('patronymic').value = student[0]["patronymic"]
+                document.getElementById('git').value = student[0]["git"]
+                document.getElementById('email').value = student[0]["email"]
+                document.getElementById('phone').value = student[0]["phone"]
+                document.getElementById('telegram').value = student[0]["telegram"]
+            }
+        }
+
+        function add_student() {
+            let json = {
+                "firstname": document.getElementById('firstname').value,
+                "lastname": document.getElementById('lastname').value,
+                "patronymic": document.getElementById('patronymic').value
+            }
+
+            if (id != null) {
+                json['id'] = id
+            }
+            if (document.getElementById('git').value != "") {
+                json['git'] = document.getElementById('git').value
+            }
+            if (document.getElementById('email').value != "") {
+                json['email'] = document.getElementById('email').value
+            }
+            if (document.getElementById('phone').value != "") {
+                json['phone'] = document.getElementById('phone').value
+            }
+            if (document.getElementById('telegram').value != "") {
+                json['telegram'] = document.getElementById('telegram').value
+            }
+
+            var http = new XMLHttpRequest();
+
+            if (is_edit_mode) {
+                http.open('GET', "edit" + JSON.stringify(json), false);
+                http.send()
+            } else {
+                http.open('GET', "insert" + JSON.stringify(json), false);
+                http.send()
+            }
+
+            window.location.replace("/");
+        }
+
+        get_editing_student()
+    </script>
+</html>
