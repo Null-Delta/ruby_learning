@@ -1,0 +1,23 @@
+# Logfile created on 2023-05-06 02:53:33 +0300 by logger.rb/v1.5.3I, [2023-05-06T02:56:08.653958 #91144]  INFO -- : creating student window open
+I, [2023-05-06T02:57:15.493921 #91266]  INFO -- : creating student window open
+I, [2023-05-06T02:57:24.315672 #91266]  INFO -- : new student added
+I, [2023-05-06T08:31:55.964994 #93176]  INFO -- : creating student window open
+I, [2023-05-06T08:32:57.635731 #93288]  INFO -- : editing student window open
+I, [2023-05-06T08:33:04.424461 #93288]  INFO -- : creating student window open
+I, [2023-05-06T08:33:22.127401 #93288]  INFO -- : creating student window open
+I, [2023-05-06T08:34:07.378687 #93288]  INFO -- : creating student window open
+I, [2023-05-06T08:34:52.675134 #93404]  INFO -- : creating student window open
+I, [2023-05-06T08:35:03.656038 #93404]  INFO -- : new student added
+I, [2023-05-06T08:35:22.994821 #93404]  INFO -- : editing student window open
+I, [2023-05-06T08:35:57.775283 #93559]  INFO -- : creating student window open
+I, [2023-05-06T08:36:25.838745 #93604]  INFO -- : editing student window open
+I, [2023-05-06T08:36:30.399420 #93604]  INFO -- : editing student window open
+I, [2023-05-06T08:36:55.402711 #93646]  INFO -- : editing student window open
+I, [2023-05-06T08:37:14.267787 #93678]  INFO -- : editing student window open
+I, [2023-05-06T08:37:15.789699 #93678]  INFO -- : student with id 3 updated
+I, [2023-05-06T08:37:34.612506 #93678]  INFO -- : student with id 6 updated
+I, [2023-05-06T11:14:18.770375 #99513]  INFO -- : creating student window open
+I, [2023-05-06T11:30:45.551243 #99513]  INFO -- : creating student window open
+I, [2023-05-06T11:30:57.943416 #99513]  INFO -- : new student added
+I, [2023-05-06T11:31:05.576097 #99513]  INFO -- : student with id 15 deleted
+I, [2023-05-06T11:31:10.687656 #99513]  INFO -- : student with id 13 updated

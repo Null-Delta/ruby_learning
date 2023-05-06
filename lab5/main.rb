@@ -10,9 +10,10 @@ students_model = McDelta::StudentsList.new(
 )
 
 main_controller = McDelta::ViewController.new(students_model)
-main_controller.on_update_data = lambda {
+main_controller.on_update_data = lambda { }
+main_controller.on_add_student_clicked = lambda { }
+main_controller.on_edit_student_clicked = lambda { |id| }
 
-}
 main_controller.selected_page = 0
 
 editing_id = nil
@@ -27,7 +28,6 @@ post "/students" do
         student.as_json
     }
 
-    puts result
     result.to_json
 end
 
@@ -49,10 +49,7 @@ get "/get_pages_count" do
     main_controller.pages_count.to_s
 end
 
-
-
 post "/set_editing_id:id" do
-    puts "abibbiba"
     puts params[:id]
     editing_id = params[:id]
 end
@@ -62,7 +59,6 @@ get "/get_editing_id" do
 end
 
 post "/delete:id" do
-    puts params[:id]
     main_controller.remove_student(params[:id])
 end
 
@@ -72,18 +68,20 @@ post "/editing:id" do
 end
 
 get "/add" do
+    if editing_id == 'null' 
+        main_controller.open_student_creation_window()
+    else 
+        main_controller.open_student_editing_window(editing_id)
+    end
     send_file 'web/add.html'
 end
 
 get "/edit:student" do
     student = McDelta::Student.from_json(JSON.parse(params[:student]))
-    puts student
     main_controller.replace_student(student.id, student)
 end
 
 get "/insert:student" do
     student = McDelta::Student.from_json(JSON.parse(params[:student]))
-    puts student
-
     main_controller.add_student(student)
 end

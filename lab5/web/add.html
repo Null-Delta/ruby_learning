@@ -1,10 +1,10 @@
 <html>
     <body style="display: flex; flex-direction: column; width: 256px;">
         Фамилия
-        <input type="text" id="firstname">
+        <input type="text" id="lastname">
 
         Имя
-        <input type="text" id="lastname">
+        <input type="text" id="firstname">
         
         Отчество
         <input type="text" id="patronymic">
@@ -20,7 +20,7 @@
 
         Телеграм
         <input type="text" id="telegram">
-        <button style="margin-top: 16px;" onclick="add_student()">Готово</button>
+        <button style="margin-top: 16px;" onclick="check_button()">Готово</button>
     </body>
 
     <script>
@@ -28,7 +28,47 @@
         let id = null
 
         function check_button() {
+            if (document.getElementById('firstname').value == "") {
+                alert("Имя не введено")
+                return
+            }
 
+            if (document.getElementById('lastname').value == "") {
+                alert("Фамилия не введена")
+                return
+            }
+
+            if (document.getElementById('patronymic').value == "") {
+                alert("Отчество не введена")
+                return
+            }
+
+            if (document.getElementById('git').value != "" && document.getElementById('git').value.match(/@\w*/) == null) {
+                alert("Неверно введен гит")
+                return
+            }
+
+            if (document.getElementById('email').value != "" && document.getElementById('email').value.match(/\w*@\w*.\w{2,3}/) == null) {
+                alert("Неверно введена почта")
+                return
+            }
+
+            if (document.getElementById('phone').value != "" && document.getElementById('phone').value.match(/\d-\d{3}-\d{3}-\d{2}-\d{2}/) == null) {
+                alert("Неверно введен номер телефона")
+                return
+            }
+
+            if (document.getElementById('telegram').value != "" && document.getElementById('telegram').value.match(/@\w*/) == null) {
+                alert("Неверно введена телега")
+                return
+            }
+
+            if (document.getElementById('git').value == "" && document.getElementById('phone').value == "" && document.getElementById('email').value == "" && document.getElementById('telegram').value == "") {
+                alert("Отсутствует контакт")
+                return
+            }
+
+            add_student()
         }
 
         function get_editing_student() {
