@@ -21,3 +21,8 @@ I, [2023-05-06T11:30:45.551243 #99513]  INFO -- : creating student window open
 I, [2023-05-06T11:30:57.943416 #99513]  INFO -- : new student added
 I, [2023-05-06T11:31:05.576097 #99513]  INFO -- : student with id 15 deleted
 I, [2023-05-06T11:31:10.687656 #99513]  INFO -- : student with id 13 updated
+I, [2023-05-06T11:43:17.960758 #1954]  INFO -- : editing student window open
+I, [2023-05-06T11:43:50.100322 #1998]  INFO -- : creating student window open
+I, [2023-05-06T11:43:55.157171 #1998]  INFO -- : editing student window open
+I, [2023-05-06T11:58:34.380932 #2890]  INFO -- : editing student window open
+I, [2023-05-06T11:58:37.853228 #2890]  INFO -- : creating student window open

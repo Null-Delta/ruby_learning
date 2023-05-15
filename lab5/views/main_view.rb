@@ -11,9 +11,9 @@ class MainView
 
     attr_accessor :controller
 
-    def initialize(model)
+    def initialize(model, controller)
 
-        self.controller = ViewController.new(model) {}        
+        self.controller = controller
         self.filter_tab = StudentsListView.new(controller)
 
         self.controller.data_list.add_observer(self.filter_tab)
@@ -41,26 +41,20 @@ class MainView
         }
 
         self.controller.on_add_student_clicked = lambda {
-            controller = CreateStudentController.new()
+            controller = Fabric.new().makeCreationStudentWindow()
             controller.onCreate = lambda { |student|
                 self.controller.add_student(student)
                 self.controller.update_table()
             }
-
-            adding_view = CreateStudentView.new(controller)
-            adding_view.present
         }
 
         self.controller.on_edit_student_clicked = lambda { |id|
             student = controller.get_student(id)
-            controller = EditStudentController.new(student)
+            controller = Fabric.new().makeEditingStudentWindow(student)
             controller.onCreate = lambda { |student|
                 self.controller.replace_student(controller.edit_user_id, student)
                 self.controller.update_table()
             }
-
-            editing_view = CreateStudentView.new(controller, student)
-            editing_view.present
         }
 
         self.controller.update_table()

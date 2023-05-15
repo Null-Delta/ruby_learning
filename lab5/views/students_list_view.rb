@@ -1,4 +1,5 @@
 require 'glimmer-dsl-libui'
+require 'mc_delta'
 
 class StudentsListView
     include Glimmer
@@ -261,7 +262,7 @@ class StudentsListView
     end
 end
 
-class StudentsListView include DataListObserver
+class StudentsListView include McDelta::DataListObserver
     def notify(data)
         self.data_table.cell_rows = data
     end

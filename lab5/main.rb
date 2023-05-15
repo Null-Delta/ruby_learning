@@ -1,5 +1,6 @@
 require 'mc_delta'
 require 'sinatra'
+require 'starproxima_university'
 
 set :port, 8000
 
